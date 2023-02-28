@@ -44,7 +44,7 @@ const Registeration = () => {
         <Fragment>
 
             <h1>    Registeration Component           </h1>
-            <Paper sx={{ width: '50%', textAlign: 'center' }}>
+            <Paper sx={{ width: '50%', margin: "20px auto" }}>
                 <Box px={3} py={2} sx={{ textAlign: 'center' }}>
                     <Grid container spacing={1} >
                         <Grid item xs={12} sm={12}>
