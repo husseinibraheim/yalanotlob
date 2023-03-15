@@ -1,12 +1,16 @@
 import './App.css';
 import Registeration from './Components/Register';
+import Home from './Pages/Home';
 import Login from './Pages/Login';
+
+
 function App() {
+
   return (
     <div className="App">
-      <h1>App Component</h1>
+      <Home />
       {/* <Registeration /> */}
-      <Login />
+      {/* <Login /> */}
     </div>
   );
 }

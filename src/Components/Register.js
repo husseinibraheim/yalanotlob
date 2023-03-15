@@ -10,7 +10,7 @@ import {
     Typography,
     Button
 } from '@mui/material';
-
+import axios from 'axios';
 const Registeration = () => {
     const validationSchema = Yup.object().shape({
         fullname: Yup.string().required('Fullname is required'),
@@ -36,8 +36,22 @@ const Registeration = () => {
         resolver: yupResolver(validationSchema)
     });
 
-    const onSubmit = data => {
-        console.log(JSON.stringify(data, null, 2));
+    const onSubmit = async data => {
+        console.log(data);
+        const { fullname, email, password } = data
+        await axios.post("http://localhost:3200/user", {
+            fullname,
+            email,
+            password
+        }, {
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then((response) => {
+                console.log(response);
+            });
+
+
+
     };
 
     return (
@@ -117,6 +131,7 @@ const Registeration = () => {
                             variant="contained"
                             color="primary"
                             onClick={handleSubmit(onSubmit)}
+
                         >
                             Register
                         </Button>
